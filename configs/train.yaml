@@ -1,0 +1,38 @@
+seed: 1234
+device: auto
+
+data:
+  root: data/raw
+  batch_size: 128
+  num_workers: 2
+  validation_split: 0.1
+  pin_memory: true
+  download: true
+
+model:
+  name: mlp  # mlp, cnn
+  num_classes: 10
+  mlp:
+    hidden_dims: [256, 128]
+    dropout: 0.2
+  cnn:
+    channels: [32, 64]
+    dropout: 0.25
+
+training:
+  epochs: 10
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  warmup_epochs: 1
+  min_lr_ratio: 0.05
+  max_grad_norm: 1.0
+  mixed_precision: false
+  resume: false
+  checkpoint_every: 1
+
+paths:
+  checkpoint_dir: checkpoints
+  checkpoint_name: mnist_classifier.pt
+  best_checkpoint_name: mnist_classifier_best.pt
+  log_dir: runs/mnist
+  output_dir: outputs
