@@ -1,5 +1,7 @@
 # Chapter 04: MNIST Classification
 
+このリポジトリは https://ml.nakasako.jp 用の教材です。
+
 この章では、MNIST の手書き数字分類を題材に、PyTorch の実践的な学習プロジェクト構成を扱います。
 
 前章の「2次関数を近似する小さな回帰」から一歩進めて、今回は DataLoader、バッチ学習、検証、checkpoint、TensorBoard、途中再開、モデル切り替えを備えた構成にしています。
